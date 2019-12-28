@@ -2,7 +2,7 @@ function loadAndDrawImage(src) {
   // Create an image object. (Not part of the dom)
   const image = new Image();
   // After the image has loaded, draw it to the canvas
-  image.onload = () => { 
+  image.onload = () => {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     ctx.drawImage(image, 0, 0);
@@ -14,3 +14,13 @@ function loadAndDrawImage(src) {
 }
 
 loadAndDrawImage("/images/img-1.jpg");
+
+$("input[type='file']").on("change", function() {
+  console.log($(this).get(0).files[0]);
+  // const canvas = document.getElementById("canvas");
+  // const ctx = canvas.getContext("2d");
+  // ctx.clearRect(0, 0, 640, 426);
+  const src = URL.createObjectURL($(this).get(0).files[0]);
+  console.log(src);
+  loadAndDrawImage(src);
+});
