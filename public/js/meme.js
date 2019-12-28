@@ -13,7 +13,19 @@ function loadAndDrawImage(src) {
   console.log("image object", image);
 }
 
+function addLink() {
+  let link = $("<a>");
+  link.html("Download!");
+  $(link).on("click", function(event) {
+    event.stopPropagation();
+    link.attr("href", canvas.toDataURL());
+    link.attr("download", "test-download.png");
+  });
+  $("body").append("<br>", link);
+}
+
 loadAndDrawImage("/images/img-1.jpg");
+addLink();
 
 $("input[type='file']").on("change", function() {
   console.log($(this).get(0).files[0]);
