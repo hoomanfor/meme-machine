@@ -1,6 +1,11 @@
 var db = require("../models");
 
 module.exports = function(app) {
+  // Meme test page
+  app.get("/meme", function(request, response) {
+    response.render("meme");
+  });
+
   // Load index page
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
