@@ -6,8 +6,9 @@ function loadAndDrawImage(src) {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     ctx.drawImage(image, 0, 0);
-    ctx.font = "40px Georgia";
+    ctx.font = "40px Impact";
     ctx.fillText("Nothing has to be true.", 0, 100);
+    console.log("width", ctx.measureText("Nothing has to be true.").width);
   };
   image.src = src;
   console.log("image object", image);

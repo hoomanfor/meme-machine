@@ -1,9 +1,14 @@
-var db = require("../models");
+const db = require("../models");
 
 module.exports = function(app) {
+  // dom-to-image NPM test
+  app.get("/test", function(request, response) {
+    response.render("test");
+  });
+  
   // Meme test page
-  app.get("/meme", function(request, response) {
-    response.render("meme");
+  app.get("/canvas", function(request, response) {
+    response.render("canvas");
   });
 
   // Load index page
