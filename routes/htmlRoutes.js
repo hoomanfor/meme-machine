@@ -1,11 +1,15 @@
 const db = require("../models");
 
 module.exports = function(app) {
+  // Mobile-first creator page
+  app.get("/creator", function(request, response) {
+    response.render("creator");
+  });
   // dom-to-image NPM test
   app.get("/test", function(request, response) {
     response.render("test");
   });
-  
+
   // Meme test page
   app.get("/canvas", function(request, response) {
     response.render("canvas");
