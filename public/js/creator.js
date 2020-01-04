@@ -9,6 +9,8 @@ $(".hamburger").on("click", function(event) {
 
 $(":file").on("change", function(event) {
   console.log("This works!");
+  $(".filename").val(event.target.files[0].name);
+  console.log(event.target.files[0].name.length);
   const bgImage = $(this).get(0).files[0];
   const src = URL.createObjectURL(bgImage);
   console.log(bgImage);
@@ -16,5 +18,3 @@ $(":file").on("change", function(event) {
   $("#bg-image").attr("src", src);
   $(".artboard").css("background-image", "url(" + src + ")");
 });
-
-// background-image: url('imagePath');
