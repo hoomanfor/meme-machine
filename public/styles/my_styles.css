@@ -55,7 +55,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 99;
 }
 
 .artboard {
@@ -64,6 +64,20 @@ body {
   background-size: cover;
   width: 400px;
   height: 350px;
+}
+
+h2 {
+  font-family: Impact, Charcoal, sans-serif; 
+  color: white; 
+  letter-spacing: .0625rem; 
+  padding: .5rem; 
+  position: absolute;
+  max-width: 100%;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 100; 
 }
 
 /* ----

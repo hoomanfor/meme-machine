@@ -17,4 +17,5 @@ $(":file").on("change", function(event) {
   console.log(src);
   $("#bg-image").attr("src", src);
   $(".artboard").css("background-image", "url(" + src + ")");
+  // $(this).prop("disabled", true);
 });
