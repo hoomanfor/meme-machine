@@ -1,15 +1,15 @@
 module.exports = (db) => {
   db.User.create({
-    firstName: 'Joe',
-    lastName: 'Gates',
-    email: 'j@g.co',
+    firstName: 'Hooman',
+    lastName: 'Foroudastan',
+    email: 'hoomanfor@gmail.com',
     password: process.env.ADMIN_USER_PWD,
     isAdmin: true
   });
   db.User.create({
-    firstName: 'Jane',
-    lastName: 'Jobs',
-    email: 'j@j.co',
+    firstName: 'Klara',
+    lastName: 'Singer',
+    email: 'klara@gmail.com',
     password: process.env.USER_PWD,
     isAdmin: false
   });

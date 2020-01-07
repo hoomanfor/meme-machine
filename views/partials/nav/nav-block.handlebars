@@ -1,35 +1,12 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-  <!-- Brand/logo -->
-  <a class="navbar-brand" href="/">
-    AppName
+<div class="nav">
+  <a href="#">Unnamed Project</a>
+  <div class="nav-links">
+    <a href="#">My Account</a>
+    <a href="#">Creator</a>
+    <a href="#">Messenger</a>
+  </div>
+  <button class="hamburger" type="button">
+    <i class="fas fa-bars"></i>
+  </button>
   </a>
-  
-  <!-- Links -->
-  <ul class="nav navbar-nav ml-auto">
-
-    {{!-- <li class="nav-item">
-      <a class="nav-link" href="/some-feature">Menu item here</a>
-    </li> --}}
-
-    {{#if isloggedin}}
-      <li class="nav-item">
-        <a class="nav-link" href="/example">Example page</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/profile">My Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Logout</a>
-      </li>
-    {{else}}
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="login-modal">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/register" data-register={{register}}>Register</a>
-      </li>
-    {{/if}}
-  </ul>
-</nav>
-
-{{> modal/login-block}}
+</div>

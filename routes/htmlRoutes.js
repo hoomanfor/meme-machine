@@ -39,7 +39,10 @@ module.exports = (db) => {
       };
       res.render('dashboard', user);
     } else {
-      res.render('dashboard');
+      const isloggedin = {
+        isloggedin: false
+      };
+      res.render('dashboard', isloggedin);
     }
   });
 
@@ -80,6 +83,15 @@ module.exports = (db) => {
       });
     } else {
       res.redirect('/');
+    }
+  });
+
+  // Load Meme Creator
+  router.get('/creator', function (request, response) {
+    if (request.isAuthenticated()) {
+      response.render('creator');
+    } else {
+      response.redirect('/');
     }
   });
 

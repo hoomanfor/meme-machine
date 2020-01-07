@@ -118,6 +118,8 @@ $('#login').on('click', function (event) {
     password: $('#user_password').val().trim()
   };
 
+  console.log("user!", user);
+
   $.post('/api/login', user, (result) => {
     // console.log(result);
     if (result.loggedIn) {
