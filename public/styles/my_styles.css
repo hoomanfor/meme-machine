@@ -80,6 +80,44 @@ h2 {
   z-index: 100; 
 }
 
+.wrapper {
+  text-align: center; 
+}
+
+.greeting {
+  border: 1px solid black;
+}
+
+.login,
+.register {
+  border: 1px solid black;
+  font-size: 1.25rem; 
+  display: inline-block;
+  text-align: left;
+  padding: 10px; 
+}
+
+input[type=email], 
+input[type=password],
+input[type=text] {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  font-size: 1.25rem; 
+  /* box-sizing: border-box; */
+}
+
+button#login {
+  background-color: blue;
+  color: white;
+  font-size: 1.25rem; 
+}
+
+h5#login-err-msg {
+  font-size: .75rem; 
+  color: red; 
+}
+
 /* ----
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;

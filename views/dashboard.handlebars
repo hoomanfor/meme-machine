@@ -1,15 +1,20 @@
-{{> nav/nav-block}}
+{{> nav-block}}
 
-    <h1 class="lead">Welcome to <strong>Unnamed Project</strong></h1>
-    <div>
+  <div class="wrapper">
+    <div class="greeting">
+      <h1>Welcome to <strong>Meme Machine</strong></h1>
       {{#if isloggedin}}
-        You are logged in as {{user.firstName}}
-        <a href="/logout"> <button type="btn" class="btn">Logout</button></a>
+      You are logged in as {{user.firstName}}
+      <a href="/logout"><button type="button">Logout</button></a>
       {{else}}
-        <p>You need to log in to use this app.</p>
+      <p>You need to log in to use this app.</p>
       {{/if}}
-      <h5 id="login-err-msg"></h5>
+    </div>
+    
+      {{#unless isloggedin}}
+        {{> login-block}}
+      {{/unless}}
+      
+  </div>
 
-{{#unless isloggedin}}
-  {{> modal/login-block}}
-{{/unless}}
+

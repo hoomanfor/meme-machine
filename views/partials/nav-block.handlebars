@@ -1,0 +1,17 @@
+<div class="nav">
+  <a href="#">Meme Machine</a>
+  <div class="nav-links">
+    {{#if isloggedin}}
+      <a href="/creator">Creator</a>
+      <a href="/profile">My Profile</a>
+      <a href="/logout">Logout</a>
+    {{else}}
+      <a href="/">Login</a>
+      <a href="/register" data-register={{register}}>Register</a>
+    {{/if}}
+  </div>
+  <button class="hamburger" type="button">
+    <i class="fas fa-bars"></i>
+  </button>
+  </a>
+</div>
