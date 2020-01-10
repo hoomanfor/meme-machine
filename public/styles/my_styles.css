@@ -107,7 +107,9 @@ input[type=text] {
   /* box-sizing: border-box; */
 }
 
-button#login {
+button#login,
+button#add-user,
+button#logout {
   background-color: blue;
   color: white;
   font-size: 1.25rem; 

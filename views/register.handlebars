@@ -1,20 +1,29 @@
 {{> nav-block user=false register=true}}
 
 <div class="wrapper">
-    <h1>Create Your Account</h1>
-    <h3 id="create-err-msg"></h3>
-    <h3 id="err-msg"></h3>
+
     <form class="register">
-      <label for="inputFirst">First Name</label>
-      <input type="text" class="form-control" id="inputFirst" placeholder="John">
-      <label for="inputLast">Last Name</label>
-      <input type="text" class="form-control" id="inputLast" placeholder="Doe">
-      <label for="inputEmail">Email</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-      <label for="inputPassword">Password</label>
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      <h1>Create Your Account</h1>
+      <h3 id="create-err-msg"></h3>
+      <h3 id="err-msg"></h3> 
       <div>
-        <h2 id="message"></h2>
+        <label for="inputFirst">First Name</label>
+        <input type="text" id="inputFirst" placeholder="John">
+      </div>
+      <div>
+        <label for="inputLast">Last Name</label>
+        <input type="text" id="inputLast" placeholder="Doe">
+      </div>
+      <div>
+        <label for="inputEmail">Email</label>
+        <input type="email" id="inputEmail" placeholder="Email">
+      </div>
+      <div>
+        <label for="inputPassword">Password</label>
+        <input type="password" id="inputPassword" placeholder="Password">
+      </div>
+      <div>
+        <h2 id="message">{{ message }}</h2>
       </div>
       <button type="submit" id="add-user">Submit</button>
     </form>
