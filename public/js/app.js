@@ -58,7 +58,8 @@ $('#update-user').on('click', function (event) {
 $('#delete-user').on('click', function (event) {
   event.preventDefault();
   $('#err-msg').empty('');
-  $('#delete-user-modal').modal('show');
+  $('.profile').css('display', 'none');
+  $('.confirm-delete').css('display', 'inline-block');
 });
 
 $('#confirm-delete').on('click', function (event) {
@@ -95,14 +96,14 @@ $('#confirm-delete').on('click', function (event) {
   }
 });
 
+$('#cancel-delete').on('click', function (event) {
+  $('.profile').css('display', 'inline-block');
+  $('.confirm-delete').css('display', 'none');
+});
+
 $('#register').on('click', function (event) {
   event.preventDefault();
   window.location.href = '/register';
-});
-
-$('#login-modal').on('click', function (event) {
-  event.preventDefault();
-  $('#user-info').modal('show');
 });
 
 $('#go-home').on('click', function (event) {
@@ -118,7 +119,7 @@ $('#login').on('click', function (event) {
     password: $('#user_password').val().trim()
   };
 
-  console.log("user!", user);
+  console.log('user!', user);
 
   $.post('/api/login', user, (result) => {
     // console.log(result);

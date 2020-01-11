@@ -89,12 +89,18 @@ h2 {
 }
 
 .login,
-.register {
+.register,
+.profile,
+.confirm-delete {
   border: 1px solid black;
   font-size: 1.25rem; 
   display: inline-block;
   text-align: left;
   padding: 10px; 
+}
+
+.confirm-delete {
+  display: none; 
 }
 
 input[type=email], 
@@ -109,7 +115,11 @@ input[type=text] {
 
 button#login,
 button#add-user,
-button#logout {
+button#logout,
+button#update-user,
+button#delete-user,
+button#confirm-delete,
+button#cancel-delete {
   background-color: blue;
   color: white;
   font-size: 1.25rem; 
