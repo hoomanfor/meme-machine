@@ -89,7 +89,17 @@ module.exports = (db) => {
   // Load Meme Creator
   router.get('/creator', function (request, response) {
     if (request.isAuthenticated()) {
-      response.render('creator');
+      db.User.findOne({
+        where: {
+          id: request.session.passport.user.id
+        }
+      }).then(() => {
+        const user = {
+          isloggedin: request.isAuthenticated()
+        };
+        // console.log(user);
+        response.render('creator', user);
+      });
     } else {
       response.redirect('/');
     }
