@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3333;
 const app = express();
 const db = require('./models');
 
+
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -21,6 +22,7 @@ if (app.get('env') !== 'test') {
 }
 
 app.use(express.static('public'));
+app.use(express.static('node_modules'));
 
 require('./config/passport')(db, app, passport); // pass passport for configuration
 
