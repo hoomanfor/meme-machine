@@ -17,6 +17,15 @@ module.exports = function (db) {
       db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
         res.json(dbExample);
       });
+    },
+    createMeme: function (request, response) {
+      db.Meme.create({
+        userId: request.session.passport.user.id,
+        fileName: request.body.fileName,
+        downloadURL: request.body.downloadURL
+      }).then((data) => {
+        response.status(201).end();
+      });
     }
   };
 };

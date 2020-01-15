@@ -99,6 +99,7 @@ module.exports = (db) => {
         };
         // console.log(user);
         response.render('creator', user);
+        // response.json(request.session.passport.user);
       });
     } else {
       response.redirect('/');
