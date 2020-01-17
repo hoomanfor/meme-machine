@@ -175,8 +175,48 @@ input[type="file"]{
   z-index: 100; 
 }
 
+.flex-nav {
+  background-color: #262324;
+  color: #D7D9D7;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.flex-logo {
+  font-family: Impact, Charcoal, sans-serif;
+  margin-left: 20px;
+  padding: 10px; 
+}
+
+.flex-links { 
+  display: flex;
+  font-size: 1.2rem;
+  margin-right: 20px; 
+}
+
+.flex-links a {
+  text-decoration: none;
+  color: #D7D9D7;
+  padding: 10px;
+}
+
+.flex-links a:hover {
+  border-bottom: 4px solid #BBBFBA;
+}
+
+
 /* ----
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;
 font-family: 'Noto Serif', serif;
 ---- */
+
+
+.FLEETING-MOMENTS-OF-AUTUMN-–-Norway-1-hex { color: #262324; }
+.FLEETING-MOMENTS-OF-AUTUMN-–-Norway-2-hex { color: #403C3D; }
+.FLEETING-MOMENTS-OF-AUTUMN-–-Norway-3-hex { color: #D7D9D7; }
+.FLEETING-MOMENTS-OF-AUTUMN-–-Norway-4-hex { color: #BBBFBA; }
+.FLEETING-MOMENTS-OF-AUTUMN-–-Norway-5-hex { color: #737372; } 
+
+

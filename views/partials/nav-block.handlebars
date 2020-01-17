@@ -1,4 +1,4 @@
-<div class="nav">
+{{!-- <div class="nav">
   <a href="#">Meme Machine</a>
   <div class="nav-links">
     {{#if isloggedin}}
@@ -14,4 +14,19 @@
     <i class="fas fa-bars"></i>
   </button>
   </a>
+</div> --}}
+<div class="flex-nav">
+  <div class="flex-logo">
+    Meme Machine
+  </div>
+  <ul class="flex-links">
+    {{#if isloggedin}}
+      <li><a href="/creator">Creator</a></li>
+      <li><a href="/profile">My Profile</a></li>
+      <li><a href="/logout">Logout</a></li>
+    {{else}}
+      <li><a href="/">Login</a></li>
+      <li><a href="/register" data-register={{register}}>Register</a></li>
+    {{/if}}
+  </ul>
 </div>
