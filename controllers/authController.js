@@ -34,7 +34,7 @@ module.exports = (passport, db) => {
             return res.status(200).json({ loggedIn: true });
           });
         } else {
-          res.json({ loggedIn: false, error: 'Can not log in, check your user name and password!' });
+          res.json({ loggedIn: false, error: 'Unable to Login, please check your Email and Password.' });
         }
       })(req, res, next);
     },

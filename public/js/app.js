@@ -127,6 +127,8 @@ $('#login').on('click', function (event) {
       $(document.location).attr('href', '/dashboard');
     } else {
       $('#login-err-msg').empty('').text(result.error);
+      $('#email').val('');
+      $('#user_password').val('');
     }
   });
 });

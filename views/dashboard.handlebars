@@ -1,6 +1,6 @@
 {{> nav-block}}
 
-  <div class="wrapper">
+  {{!-- <div class="wrapper">
     <div class="greeting">
       <h1>Welcome to <strong>Meme Machine</strong></h1>
       {{#if isloggedin}}
@@ -15,6 +15,12 @@
         {{> login-block}}
       {{/unless}}
       
-  </div>
+  </div> --}}
+
+<div class="flex-body">
+  {{#unless isloggedin}}
+    {{> login-block}}
+  {{/unless}}
+</div>
 
 
