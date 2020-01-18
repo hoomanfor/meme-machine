@@ -233,7 +233,7 @@ input[type="file"]{
   background-color: white; 
   padding: 2rem; 
   border-radius: 5px;
-  max-width: 400px;
+  width: 400px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -244,12 +244,20 @@ input[type="file"]{
 
 h1 {
   color: #403C3D;
-  font-size: 2.6rem; 
+  font-size: 2.4rem; 
   font-family: Impact, Charcoal, sans-serif; 
   text-align: center;
   line-height: 2.4rem;
   margin-bottom: 1.5rem;
-  text-shadow: 1px 1px 2px #d7d9d7;
+  opacity: .9;
+}
+
+h2 {
+  color: #403C3D;
+  font-size: 2rem; 
+  font-family: Impact, Charcoal, sans-serif;
+  line-height: 2.4rem;
+  margin-bottom: 1.5rem;
   opacity: .9;
 }
 
@@ -268,7 +276,8 @@ input:focus {
   outline: none;
 }
 
-button#login[type="submit"] {
+button#login[type="submit"],
+button#add-user[type="submit"] {
   text-align: center;
   font-size: 1.4rem;
   font-weight: 500;
@@ -284,13 +293,14 @@ button#login[type="submit"] {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-button#login[type="submit"]:focus {
+button#login[type="submit"]:focus,
+button#add-user[type="submit"]:focus {
   outline: none;
 }
 
 .error {
   text-align: center;
-  font-size: .8rem;
+  font-size: .9rem;
   font-weight: 600;
   padding: .5rem; 
   font-family: 'Roboto Condensed', sans-serif;

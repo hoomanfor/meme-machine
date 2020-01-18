@@ -18,10 +18,11 @@ module.exports = (passport, db) => {
         });
       }).catch((err) => {
         console.log(err);
-        res.status(403).json({ error: 'Email already exists!' });
+        // res.status(403).json({ error: 'Email already exists!' });
+        return res.json({ error: 'This email is already registered.' });
       });
     },
-    login: (req, res, next) => {
+    login: (req, res, next) => {s
       passport.authenticate('local', (err, user) => {
         if (err) {
           return next(err);

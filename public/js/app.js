@@ -13,12 +13,16 @@ $('#add-user').on('click', function (event) {
       type: 'POST',
       url: '/api/register',
       data: newAccount
-    }).then(() => {
-      window.location.href = '/';
+    }).then(function (response) {
+      if (response.error) {
+        $('#create-err-msg').empty('').text(response.error);
+      } else {
+        window.location.href = '/';
+      }
     });
   } else {
     console.log('**Please fill out entire form**');
-    $('#create-err-msg').empty('').text('**Please fill out entire form**');
+    $('#create-err-msg').empty('').text('Please complete the entire form.');
   }
 });
 

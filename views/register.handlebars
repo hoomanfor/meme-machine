@@ -1,6 +1,6 @@
 {{> nav-block user=false register=true}}
 
-<div class="wrapper">
+{{!-- <div class="wrapper">
     <form class="register">
       <h1>Create Your Account</h1>
       <h3 id="create-err-msg"></h3>
@@ -26,4 +26,16 @@
       </div>
       <button type="submit" id="add-user">Submit</button>
     </form>
+</div> --}}
+
+<div class="flex-body">
+  <form class="flex-form">
+    <h2>Register Your Account</h2>
+    <input type="text" id="inputFirst" placeholder="First Name">
+    <input type="text" id="inputLast" placeholder="Last Name">
+    <input type="email" id="inputEmail" placeholder="Email">
+    <input type="password" id="inputPassword" placeholder="Password">
+    <button type="submit" id="add-user">Create</button>
+    <span class="error" id="create-err-msg"></span>
+  </form>
 </div>
