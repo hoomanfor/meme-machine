@@ -35,6 +35,7 @@ $(':file').on('change', function (event) {
   const src = URL.createObjectURL(bgImage);
   console.log('src', src);
   $('#capture').css('background-image', 'url(' + src + ')');
+  $('.upload-instruction').html('');
   // $('.filename').val(event.target.files[0].name);
   // console.log(event.target.files[0].name.length);
   // console.log(event.target.files[0].name.length);
@@ -43,6 +44,18 @@ $(':file').on('change', function (event) {
   // console.log(src);
   // $('#bg-image').attr('src', src);
   // $('#capture').css('background-image', 'url(' + src + ')');
+});
+
+$('input[type="file"]').on('mouseover', function (event) {
+  console.log('This works!');
+  $('#capture').css('background-color', 'rgba(128, 157, 255, .8)');
+  $('.upload-instruction').css('color', '#262324');
+});
+
+$('input[type="file"]').on('mouseout', function (event) {
+  console.log('This works!');
+  $('#capture').css('background-color', '#262324');
+  $('.upload-instruction').css('color', '#BBBFBA');
 });
 
 $('#save-meme').on('click', function (event) {

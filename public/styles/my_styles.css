@@ -140,48 +140,6 @@ button#cancel-delete {
   color: red; 
 } */
 
-.container {
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-}
-
-input[type="file"]{
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  zoom: 1; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 99;
-}
-
-#capture {
-  border: 1px solid black; 
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 375px;
-  height: 350px;
-}
-
-#meme-text {
-  font-family: Impact, Charcoal, sans-serif; 
-  font-size: 2.4rem; 
-  text-shadow: 2px 2px 1px black;
-  color: white; 
-  letter-spacing: .0625rem; 
-  padding: .5rem; 
-  position: absolute;
-  max-width: 100%;
-  bottom: 10%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 100; 
-}
-
 .flex-nav {
   background-color: #262324;
   color: #D7D9D7;
@@ -215,7 +173,7 @@ input[type="file"]{
 }
 
 .flex-body {
-  /* border: 3px solid green;  */
+  border: 3px solid green; 
   display: flex;
   -webkit-display: box;
   -moz-display: box;
@@ -224,7 +182,7 @@ input[type="file"]{
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  padding: 6%;
+  padding: 4%;
   /* padding: 1rem;  */
   margin: 0;
 }
@@ -282,7 +240,8 @@ button#add-user[type="submit"],
 button#update-user[type="submit"],
 button#delete-user[type="submit"],
 button#confirm-delete[type="submit"],
-button#cancel-delete[type="submit"] {
+button#cancel-delete[type="submit"],
+button#save-meme {
   text-align: center;
   font-size: 1.4rem;
   font-weight: 500;
@@ -301,7 +260,8 @@ button#cancel-delete[type="submit"] {
 button#login[type="submit"]:focus,
 button#add-user[type="submit"]:focus,
 button#update-user[type="submit"]:focus,
-button#cancel-delete[type="submit"]:focus {
+button#cancel-delete[type="submit"]:focus,
+button#save-meme:focus {
   background-color: #2F8047;
   outline: none;
 }
@@ -309,7 +269,8 @@ button#cancel-delete[type="submit"]:focus {
 button#login[type="submit"]:hover,
 button#add-user[type="submit"]:hover,
 button#update-user[type="submit"]:hover,
-button#cancel-delete[type="submit"]:hover {
+button#cancel-delete[type="submit"]:hover,
+button#save-meme:hover {
   background-color: #2F8047;
 }
 
@@ -352,6 +313,91 @@ button#confirm-delete[type="submit"]:hover {
   padding: .5rem;
 }
 
+.flex-creator {
+  background-color: rgba(215, 217, 215, .8);
+  padding: 1rem; 
+  border-radius: 5px;
+  /* max-width: 400px; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.25);
+  /* opacity: .98; */
+}
+
+.container {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+input[type="file"]{
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  zoom: 1; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+#capture {
+  background-color: #262324;
+  /* background-color: rgba(128, 157, 255, .8); */
+  border: 2px solid black; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 375px;
+  height: 350px;
+}
+
+.upload-instruction {
+  font-family: Impact, Charcoal, sans-serif; 
+  font-size: 5rem; 
+  /* text-shadow: 2px 2px 1px black; */
+  text-align: center;
+  color: #BBBFBA;
+  letter-spacing: .0625rem; 
+  padding: .5rem; 
+  position: absolute;
+  max-width: 100%;
+  bottom: 40%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 98; 
+}
+
+#meme-text {
+  font-family: Impact, Charcoal, sans-serif; 
+  font-size: 2.2rem; 
+  text-shadow: 2px 2px 1px black;
+  color: white; 
+  letter-spacing: .07rem; 
+  padding: .5rem; 
+  position: absolute;
+  max-width: 100%;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 100; 
+  outline: none;
+}
+
+#meme-text:hover {
+  outline: 1px dashed white; 
+}
+
+#filename {
+  margin: .5rem 0; 
+  background-color: rgb(255, 255, 255, .9); 
+}
+
 /* ----
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;
@@ -362,7 +408,7 @@ font-family: 'Noto Serif', serif;
 .FLEETING-MOMENTS-OF-AUTUMN-–-Norway-1-hex { color: #262324; }
 .FLEETING-MOMENTS-OF-AUTUMN-–-Norway-2-hex { color: #403C3D; }
 .FLEETING-MOMENTS-OF-AUTUMN-–-Norway-3-hex { color: #d7d9d7; }
-.FLEETING-MOMENTS-OF-AUTUMN-–-Norway-4-hex { color: #BBBFBA; }
+.FLEETING-MOMENTS-OF-AUTUMN-–-Norway-4-hex { color: #bbbfba; }
 .FLEETING-MOMENTS-OF-AUTUMN-–-Norway-5-hex { color: #737372; } 
 
 

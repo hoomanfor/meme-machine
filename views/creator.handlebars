@@ -19,7 +19,7 @@
 {{!-- </div> --}}
 
 
-<div class="wrapper">
+{{!-- <div class="wrapper">
   <div class="container">
     <input type="file">
     <div id="capture">
@@ -30,8 +30,18 @@
   <div style="display: block; text-align: center;">
     <input type="text" name="fileName" id="filename">
     <button id="save-meme" type="button">Save</button>
+  </div> --}}
+
+<div class="flex-body">
+  <div class="flex-creator">
+    <div class="container">
+      <input type="file">
+      <div id="capture">
+        <h2 id="meme-text" contenteditable="true">Click Here to Edit Text</h2>
+        <h3 class="upload-instruction"><i class="fas fa-upload"></i></h3>
+      </div>
+    </div>
+    <input type="text" name="fileName" id="filename" placeholder="Enter a Meme Name">
+    <button id="save-meme" type="button">Save</button>
   </div>
-
-{{!-- <div>
-
-</div> --}}
+</div>
