@@ -254,6 +254,7 @@ h1 {
 
 h2 {
   color: #403C3D;
+  text-align: center;
   font-size: 2rem; 
   font-family: Impact, Charcoal, sans-serif;
   line-height: 2.4rem;
@@ -277,7 +278,11 @@ input:focus {
 }
 
 button#login[type="submit"],
-button#add-user[type="submit"] {
+button#add-user[type="submit"],
+button#update-user[type="submit"],
+button#delete-user[type="submit"],
+button#confirm-delete[type="submit"],
+button#cancel-delete[type="submit"] {
   text-align: center;
   font-size: 1.4rem;
   font-weight: 500;
@@ -294,8 +299,38 @@ button#add-user[type="submit"] {
 }
 
 button#login[type="submit"]:focus,
-button#add-user[type="submit"]:focus {
+button#add-user[type="submit"]:focus,
+button#update-user[type="submit"]:focus,
+button#cancel-delete[type="submit"]:focus {
+  background-color: #2F8047;
   outline: none;
+}
+
+button#login[type="submit"]:hover,
+button#add-user[type="submit"]:hover,
+button#update-user[type="submit"]:hover,
+button#cancel-delete[type="submit"]:hover {
+  background-color: #2F8047;
+}
+
+button#delete-user[type="submit"],
+button#confirm-delete[type="submit"] {
+  background-color: #FF4340;
+}
+
+button#delete-user[type="submit"]:focus,
+button#confirm-delete[type="submit"]:focus {
+  background-color: #C23431;
+  outline: none;
+}
+
+button#delete-user[type="submit"]:hover,
+button#confirm-delete[type="submit"]:hover {
+  background-color: #C23431;
+}
+
+.hide {
+  display: none; 
 }
 
 .error {

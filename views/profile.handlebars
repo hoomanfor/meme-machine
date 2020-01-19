@@ -1,6 +1,6 @@
 {{> nav-block user=true register=false}}
 
-<div class="wrapper">
+{{!-- <div class="wrapper">
   <form class="profile">
     <h1>View or update your user</h1>
     <div>
@@ -46,6 +46,29 @@
     </div>
     <button id="confirm-delete" type="button" data-id="{{userInfo.id}}">Confirm Delete</button>
     <button id="cancel-delete" type="button">Cancel</button>
+  </form>
+</div> --}}
+
+<div class="flex-body">
+  <form class="flex-form profile-info">
+    <h2>Profile Information: Update or Delete</h2>
+    <input type="text" id="inputFirst" value="{{userInfo.firstName}}" placeholder="{{userInfo.firstName}}">
+    <input type="text" id="inputLast" value="{{userInfo.lastName}}" placeholder="{{userInfo.lastName}}">
+    <input type="email" id="inputEmail" value="{{userInfo.email}}" placeholder="{{userInfo.email}}">
+    <input type="password" id="inputPassword" value="{{userInfo.password}}" placeholder="Enter New Password">
+    <button type="submit" id="update-user" data-id="{{userInfo.id}}">Update Profile</button>
+    <span class="error hide" id="create-err-msg"></span>
+    {{#unless userInfo.isAdmin}}
+        <button type="submit" id="delete-user">Delete Profile</button>
+    {{/unless}}
+  </form>
+  <form class="flex-form confirm-delete hide">
+    <h2 style="text-align: center;">Enter Your Email &amp; Password to Confirm</h2>
+    <input type="text" id="userEmail" placeholder="Email">
+    <input type="password" id="userPassword" placeholder="Password">
+    <button id="confirm-delete" type="submit" data-id="{{userInfo.id}}">Delete Profile</button>
+    <span class="error hide" id="create-err-msg"></span>
+    <button id="cancel-delete" type="submit">Cancel</button>
   </form>
 </div>
 

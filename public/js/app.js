@@ -39,8 +39,7 @@ $('#update-user').on('click', function (event) {
     password: $('#inputPassword').val().trim()
   };
   $('#err-msg').empty('');
-  // $('#change-user-modal').modal('show');
-  console.log(changeUser);
+  // console.log(changeUser);
 
   if (changeUser.password.length > 0 && changeUser.email.length > 0 && changeUser.password.length > 0 && changeUser.lastName.length > 0 && changeUser.firstName.length > 0) {
     $.ajax({
@@ -53,8 +52,9 @@ $('#update-user').on('click', function (event) {
       window.location.href = '/logout';
     });
   } else {
-    console.log('**Please fill out entire form**');
-    $('#update-err-msg').empty('').text('**Please fill out entire form**');
+    // console.log('**Please fill out entire form**');
+    $('.error').removeClass('hide');
+    $('#create-err-msg').empty('').text('Please enter a new password.');
   }
 });
 
@@ -62,8 +62,9 @@ $('#update-user').on('click', function (event) {
 $('#delete-user').on('click', function (event) {
   event.preventDefault();
   $('#err-msg').empty('');
-  $('.profile').css('display', 'none');
-  $('.confirm-delete').css('display', 'inline-block');
+  $('.error').addClass('hide');
+  $('.profile-info').addClass('hide');
+  $('.confirm-delete').removeClass('hide');
 });
 
 $('#confirm-delete').on('click', function (event) {
@@ -91,18 +92,22 @@ $('#confirm-delete').on('click', function (event) {
           window.location.href = '/logout';
         });
       } else {
-        $('#err-msg').empty('').text('Wrong credentials!');
+        $('.error').removeClass('hide');
+        $('.error').empty('').text('Your email or password is incorrect.');
       }
     });
   } else {
     console.log('fill out entire form');
-    $('#err-msg').empty('').text('fill out entire form');
+    $('.error').removeClass('hide');
+    $('.error').empty('').text('You must enter your email and password');
   }
 });
 
 $('#cancel-delete').on('click', function (event) {
-  $('.profile').css('display', 'inline-block');
-  $('.confirm-delete').css('display', 'none');
+  event.preventDefault();
+  $('.profile-info').removeClass('hide');
+  $('.confirm-delete').addClass('hide');
+  $('.error').addClass('hide');
 });
 
 $('#register').on('click', function (event) {

@@ -22,7 +22,7 @@ module.exports = (passport, db) => {
         return res.json({ error: 'This email is already registered.' });
       });
     },
-    login: (req, res, next) => {s
+    login: (req, res, next) => {
       passport.authenticate('local', (err, user) => {
         if (err) {
           return next(err);
