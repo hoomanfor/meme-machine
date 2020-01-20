@@ -14,11 +14,6 @@ const storageRef = firebase.storage().ref();
 // Create a reference under which you want to list
 const listRef = storageRef.child('images/uid');
 
-// var message = 'Klara' // use the Blob or File API
-// klaraRef.putString(message).then(function(snapshot) {
-//   console.log('Uploaded a blob or file!');
-// });
-
 $('.hamburger').on('click', function (event) {
   event.preventDefault();
   if ($('.nav-links').css('display') === 'none') {
@@ -70,6 +65,7 @@ $('#save-meme').on('click', function (event) {
   const fileName = $('#filename').val();
   console.log('fileName', fileName);
   if (fileName) {
+    $('#create-err-msg').addClass('hide');
     html2canvas(document.getElementById('capture'), { scrollX: 0, scrollY: -window.scrollY, allowTaint: true }).then(canvas => {
       $('body').append(canvas);
       canvas.toBlob(function (blob) {
@@ -90,6 +86,7 @@ $('#save-meme').on('click', function (event) {
               break;
             case firebase.storage.TaskState.RUNNING: // or 'running'
               console.log('Upload is running');
+              $('#save-meme').html('<i class="fas fa-spinner spin"></i>');
               break;
           }
         }, function (error) {
@@ -109,13 +106,18 @@ $('#save-meme').on('click', function (event) {
               data: newMeme
             }).then((result) => {
               console.log(result);
+              $('#filename').val('');
+              $('#save-meme').html('Saved');
+              $('#save-meme').prop('disabled', true);
+              $('#download-link').removeAttr('disabled');
+              $('#download-meme').removeAttr('disabled');
             });
           });
         });
       });
     });
+  } else {
+    $('#create-err-msg').removeClass('hide');
+    $('#create-err-msg').text('Please name your meme.');
   }
 });
-
-// $(this).prop("disabled", true);
-// $(this).css('display', 'none');

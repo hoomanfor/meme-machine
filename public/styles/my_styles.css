@@ -241,7 +241,8 @@ button#update-user[type="submit"],
 button#delete-user[type="submit"],
 button#confirm-delete[type="submit"],
 button#cancel-delete[type="submit"],
-button#save-meme {
+button#save-meme,
+button#download-meme {
   text-align: center;
   font-size: 1.4rem;
   font-weight: 500;
@@ -290,6 +291,25 @@ button#confirm-delete[type="submit"]:hover {
   background-color: #C23431;
 }
 
+button#download-meme {
+  background-color: #6664FF;  
+}
+
+button#download-meme:focus {
+  background-color: #5250c5;
+}
+
+button#download-meme:hover {
+  background-color: #5250c5;
+}
+
+button#save-meme:disabled,
+button#download-meme:disabled {
+  background-color: rgba(64, 60, 61, .4);
+  color: #bbbfba;
+  cursor: default;
+}
+
 .hide {
   display: none; 
 }
@@ -311,6 +331,16 @@ button#confirm-delete[type="submit"]:hover {
   color: blue;
   opacity: .9;
   padding: .5rem;
+}
+
+.spin {
+  animation: spin 4s infinite;
+}
+
+@keyframes spin { 
+  100% { 
+    transform:rotate(360deg); 
+  } 
 }
 
 .flex-creator {
