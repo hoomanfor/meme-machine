@@ -173,7 +173,7 @@ button#cancel-delete {
 }
 
 .flex-body {
-  border: 3px solid green; 
+  /* border: 3px solid green;  */
   display: flex;
   -webkit-display: box;
   -moz-display: box;
@@ -417,6 +417,7 @@ input[type="file"]{
   margin: auto;
   z-index: 100; 
   outline: none;
+  opacity: 1;
 }
 
 #meme-text:hover {

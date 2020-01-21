@@ -9,10 +9,8 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
 const storageRef = firebase.storage().ref();
-// Create a reference under which you want to list
-const listRef = storageRef.child('images/uid');
+let currentText = $('#meme-text').html();
 
 $('.hamburger').on('click', function (event) {
   event.preventDefault();
@@ -23,53 +21,46 @@ $('.hamburger').on('click', function (event) {
   }
 });
 
+$('#meme-text').blur(function () {
+  const newText = $(this).html();
+  if (currentText !== newText) {
+    currentText = newText;
+    $('#save-meme').removeAttr('disabled');
+    $('#save-meme').html('Save');
+    $('#download-button').prop('disabled', true);
+    $('#download-meme').prop('disabled', true);
+  } else {
+    console.log('Current Meme Text is the same as New Meme Text');
+  }
+});
+
 $(':file').on('change', function (event) {
-  console.log('This works!');
+  $('#save-meme').removeAttr('disabled');
+  $('#save-meme').html('Save');
+  $('#download-button').prop('disabled', true);
+  $('#download-meme').prop('disabled', true);
   const bgImage = $(this).get(0).files[0];
-  console.log('bgImage', bgImage);
   const src = URL.createObjectURL(bgImage);
-  console.log('src', src);
   $('#capture').css('background-image', 'url(' + src + ')');
   $('.upload-instruction').html('');
-  // $('.filename').val(event.target.files[0].name);
-  // console.log(event.target.files[0].name.length);
-  // console.log(event.target.files[0].name.length);
-  // const src = URL.createObjectURL(bgImage);
-  // console.log(bgImage);
-  // console.log(src);
-  // $('#bg-image').attr('src', src);
-  // $('#capture').css('background-image', 'url(' + src + ')');
 });
 
 $('input[type="file"]').on('mouseover', function (event) {
-  console.log('This works!');
   $('#capture').css('background-color', 'rgba(128, 157, 255, .8)');
   $('.upload-instruction').css('color', '#262324');
 });
 
 $('input[type="file"]').on('mouseout', function (event) {
-  console.log('This works!');
   $('#capture').css('background-color', '#262324');
   $('.upload-instruction').css('color', '#BBBFBA');
 });
 
 $('#save-meme').on('click', function (event) {
-  // html2canvas(document.querySelector('.artboard2')).then(canvas => {
-  //   document.body.appendChild(canvas);
-  //   const link = $('<a>');
-  //   link.html('Download!');
-  //   link.attr('href', canvas.toDataURL());
-  //   link.attr('download', 'test-download.png');
-  //   $('body').append(link);
-  // });
   const fileName = $('#filename').val();
-  console.log('fileName', fileName);
   if (fileName) {
     $('#create-err-msg').addClass('hide');
     html2canvas(document.getElementById('capture'), { scrollX: 0, scrollY: -window.scrollY, allowTaint: true }).then(canvas => {
-      $('body').append(canvas);
       canvas.toBlob(function (blob) {
-        console.log('blob', blob);
         const uploadTask = storageRef.child('memes/' + fileName + '.png').put(blob);
         // Register three observers:
         // 1. 'state_changed' observer, called any time the state changes
@@ -109,7 +100,9 @@ $('#save-meme').on('click', function (event) {
               $('#filename').val('');
               $('#save-meme').html('Saved');
               $('#save-meme').prop('disabled', true);
-              $('#download-link').removeAttr('disabled');
+              $('#download-button').removeAttr('disabled');
+              $('#download-button').attr('href', canvas.toDataURL());
+              $('#download-button').attr('download', fileName + '.png');
               $('#download-meme').removeAttr('disabled');
             });
           });
