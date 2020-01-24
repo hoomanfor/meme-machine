@@ -26,6 +26,11 @@ module.exports = function (db) {
       }).then((data) => {
         response.status(201).end();
       });
+    },
+    getMemes: function (request, response) {
+      db.Meme.findAll({ where: { userId: request.session.passport.user.id } }).then(function (data) {
+        response.json(data);
+      });
     }
   };
 };

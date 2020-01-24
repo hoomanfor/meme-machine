@@ -17,10 +17,19 @@
       
   </div> --}}
 
-<div class="flex-body">
-  {{#unless isloggedin}}
-    {{> login-block}}
-  {{/unless}}
+
+{{#if isloggedin}}
+<div class="flex-library">
+  {{#each memes}}
+    <img class="library-item" src="{{ this.downloadURL }}" alt="Italian Trulli">
+  {{/each}}
 </div>
+{{else}}
+  <div class="flex-body">
+    {{> login-block}}
+  </div>
+{{/if}}
+
+
 
 

@@ -19,6 +19,7 @@ module.exports = (passport, db) => {
   router.delete('/examples/:id', AppController.deleteExample);
   
   // Creator
+  router.get('/library', AppController.getMemes);
   router.post('/creator', AppController.createMeme);
 
   return router;

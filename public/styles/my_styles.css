@@ -172,8 +172,22 @@ button#cancel-delete {
   border-bottom: 4px solid #BBBFBA;
 }
 
+.flex-library {
+  border: 3px solid blue;
+  background-color: rgb(255, 255, 255, .9);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.library-item {
+  padding: 20px;
+}
+
 .flex-body {
-  /* border: 3px solid green;  */
+  border: 3px solid green; 
   display: flex;
   -webkit-display: box;
   -moz-display: box;

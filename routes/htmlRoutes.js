@@ -30,32 +30,41 @@ module.exports = (db) => {
     }
   });
 
-  // Load dashboard page
+  // Load library page
   router.get('/', (req, res) => {
     if (req.isAuthenticated()) {
-      const user = {
-        user: req.session.passport.user,
-        isloggedin: req.isAuthenticated()
-      };
-      res.render('dashboard', user);
+      db.Meme.findAll({ where: { userId: req.session.passport.user.id } }).then(function (data) {
+        const user = {
+          user: req.session.passport.user,
+          isloggedin: req.isAuthenticated(),
+          memes: data
+        };
+        res.render('library', user);
+      });
     } else {
       const isloggedin = {
         isloggedin: false
       };
-      res.render('dashboard', isloggedin);
+      res.render('library', isloggedin);
     }
   });
 
-  // Load dashboard page
-  router.get('/dashboard', (req, res) => {
+  // Load library page
+  router.get('/library', (req, res) => {
     if (req.isAuthenticated()) {
-      const user = {
-        user: req.session.passport.user,
-        isloggedin: req.isAuthenticated()
-      };
-      res.render('dashboard', user);
+      db.Meme.findAll({ where: { userId: req.session.passport.user.id } }).then(function (data) {
+        const user = {
+          user: req.session.passport.user,
+          isloggedin: req.isAuthenticated(),
+          memes: data
+        };
+        res.render('library', user);
+      });
     } else {
-      res.render('dashboard');
+      const isloggedin = {
+        isloggedin: false
+      };
+      res.render('library', isloggedin);
     }
   });
 
