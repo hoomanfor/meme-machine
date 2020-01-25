@@ -19,9 +19,16 @@
 
 
 {{#if isloggedin}}
+<div class="flex-header">
+  {{#if memes.length}}
+    <h1 class="library-header">{{user.firstName}}'s Library</h1>
+  {{else}}
+    <h1 class="library-header">You have no memes!<br> Visit the Creator to Make Memes.</h1>
+  {{/if}}
+</div>
 <div class="flex-library">
   {{#each memes}}
-    <img class="library-item" src="{{ this.downloadURL }}" alt="Italian Trulli">
+    <img class="library-item" src="{{ this.downloadURL }}" alt="{{ this.fileName }}">
   {{/each}}
 </div>
 {{else}}

@@ -174,16 +174,33 @@ button#cancel-delete {
 
 .flex-library {
   border: 3px solid blue;
-  background-color: rgb(255, 255, 255, .9);
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
   max-width: 1400px;
   margin: auto;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: center;
 }
 
 .library-item {
-  padding: 20px;
+  margin: 5px;
+}
+
+.flex-header {
+  display: flex;
+  padding: 1%;
+  justify-content: center;
+
+}
+
+.library-header {
+  background-color: rgb(255, 255, 255, .9);
+  border-radius: 5px;
+  max-width: 400px;
+  width: 100%;
+  padding: 1%;
+  margin: 0;
+  opacity: 1;
 }
 
 .flex-body {
@@ -348,7 +365,7 @@ button#download-meme:disabled {
 }
 
 .spin {
-  animation: spin 4s infinite;
+  animation: spin 4s linear infinite;
 }
 
 @keyframes spin { 
