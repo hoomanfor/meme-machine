@@ -1,3 +1,15 @@
+$(function () {
+  $('.flex-toggle ').on('click', function () {
+    if ($('.flex-item').hasClass('active')) {
+      $('.flex-item').removeClass('active');
+      $(this).find('a').html("<i class='fas fa-bars'></i>");
+    } else {
+      $('.flex-item').addClass('active');
+      $(this).find('a').html("<i class='fas fa-times'></i>");
+    }
+  });
+});
+
 $('#add-user').on('click', function (event) {
   event.preventDefault();
 

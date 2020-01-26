@@ -1,23 +1,5 @@
 {{> nav-block}}
 
-  {{!-- <div class="wrapper">
-    <div class="greeting">
-      <h1>Welcome to <strong>Meme Machine</strong></h1>
-      {{#if isloggedin}}
-      You are logged in as {{user.firstName}}
-      <a href="/logout"><button id="logout" type="button">Logout</button></a>
-      {{else}}
-      <p>You need to log in to use this app.</p>
-      {{/if}}
-    </div>
-    
-      {{#unless isloggedin}}
-        {{> login-block}}
-      {{/unless}}
-      
-  </div> --}}
-
-
 {{#if isloggedin}}
 <div class="flex-header">
   {{#if memes.length}}

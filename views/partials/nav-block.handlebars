@@ -15,19 +15,36 @@
   </button>
   </a>
 </div> --}}
-<div class="flex-nav">
-  <div class="flex-logo">
-    Meme Machine
-  </div>
-  <ul class="flex-links">
+<div>
+  <ul class="flex-nav">
     {{#if isloggedin}}
-      <li><a href="/library">Library</a></li>
-      <li><a href="/creator">Creator</a></li>
-      <li><a href="/profile">My Profile</a></li>
-      <li><a href="/logout">Logout</a></li>
+      <li class="flex-logo"><a href="/">Meme Machine</a></li>
+      <li class="flex-item"><a href="/library">Library</a></li>
+      <li class="flex-item"><a href="/creator">Creator</a></li>
+      <li class="flex-item"><a href="/profile">My Profile</a></li>
+      <li class="flex-item logout"><a href="/logout">Logout</a></li>
+      <li class="flex-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
     {{else}}
-      <li><a href="/">Login</a></li>
-      <li><a href="/register" data-register={{register}}>Register</a></li>
+      <li class="flex-logo"><a href="/">Meme Machine</a></li>
+      <li class="flex-item button"><a href="/">Login</a></li>
+      <li class="flex-item button secondary"><a href="/register" data-register={{register}}>Register</a></li>
+      <li class="flex-toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
     {{/if}}
   </ul>
 </div>
+
+{{!-- <nav>
+    <ul class="menu">
+        <li class="logo"><a href="#">Invisible App</a></li>
+        <li class="item"><a href="#">Home</a></li>
+        <li class="item"><a href="#">About</a></li>
+        <li class="item"><a href="#">Services</a></li>
+        <li class="item"><a href="#">Features</a></li>
+        <li class="item"><a href="#">Blog</a></li>
+        <li class="item"><a href="#">Contact</a>
+        </li>
+        <li class="item button"><a href="#">Log In</a></li>
+        <li class="item button secondary"><a href="#">Sign Up</a></li>
+        <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+    </ul>
+</nav> --}}

@@ -56,6 +56,7 @@ $('input[type="file"]').on('mouseout', function (event) {
 });
 
 $('#save-meme').on('click', function (event) {
+  $('#save-meme').html('<i class="fas fa-spinner spin"></i>');
   const fileName = $('#filename').val();
   if (fileName) {
     $('#create-err-msg').addClass('hide');
@@ -77,7 +78,6 @@ $('#save-meme').on('click', function (event) {
               break;
             case firebase.storage.TaskState.RUNNING: // or 'running'
               console.log('Upload is running');
-              $('#save-meme').html('<i class="fas fa-spinner spin"></i>');
               break;
           }
         }, function (error) {
