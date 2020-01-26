@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const firebaseConfig = {
   apiKey: 'AIzaSyA2PDDd2nQlPQwRp4lVpX3BhF8HZs5RNXU',
   authDomain: 'meme-machine-b458b.firebaseapp.com',
