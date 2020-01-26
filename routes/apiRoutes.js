@@ -12,11 +12,6 @@ module.exports = (passport, db) => {
   router.put('/user/:id', ensureAuthenticated, AuthController.updateUser);
   router.delete('/user/:id', ensureAuthenticated, AuthController.deleteUser);
   router.post('/user/confirm', AuthController.confirmAuth);
-
-  // App
-  router.get('/examples', AppController.getExamples);
-  router.post('/examples', AppController.createExample);
-  router.delete('/examples/:id', AppController.deleteExample);
   
   // Creator
   router.get('/library', AppController.getMemes);
